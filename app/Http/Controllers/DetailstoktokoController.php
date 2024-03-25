@@ -22,11 +22,22 @@ class DetailstoktokoController extends Controller
 
     public function create()
     {
+        $cek = StokToko::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_suratjalan = 'SRJLN' . $urut;
+        }else{
+            $ambil = StokToko::all()->last();
+            $urut = (int)substr($ambil->kode_suratjalan, - 5) + 1;
+            $kode_suratjalan = 'SRJLN' . $urut;
+        }
+
         return view('stoktoko.create', [
             'title' => 'Form Detail Stok Toko',
             'user' => auth()->user()->name,
             'totalstokgudang' => TotalStokGudang::all(),
             'toko' => Toko::all(),
+            'kode_suratjalan' => $kode_suratjalan
         ]);
     }
 

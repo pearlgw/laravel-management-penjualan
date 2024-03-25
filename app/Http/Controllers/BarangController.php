@@ -25,11 +25,21 @@ class BarangController extends Controller
 
     public function create()
     {
+        $cek = Barang::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_barang = 'BRG' . $urut;
+        }else{
+            $ambil = Barang::all()->last();
+            $urut = (int)substr($ambil->kode_barang, - 5) + 1;
+            $kode_barang = 'BRG' . $urut;
+        }
         return view('barang.create', [
             'title' => 'Tambah Barang',
             'user' => auth()->user()->name,
             'jenis_barang' => JenisBarang::all(),
             'pemasok' => Pemasok::all(),
+            'kode_barang' => $kode_barang,
         ]);
     }
 

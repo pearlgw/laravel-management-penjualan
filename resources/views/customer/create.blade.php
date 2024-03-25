@@ -8,13 +8,8 @@
         @csrf
         <div class="mb-3">
             <label for="kode_customer" class="form-label">Kode Customer</label>
-            <input type="text" name="kode_customer" class="form-control @error('kode_customer') is-invalid @enderror" id="kode_customer"
-                value="{{ old('kode_customer') }}" required>
-            @error('kode_customer')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
+            <input type="text" name="kode_customer" class="form-control" id="kode_customer"
+                value="{{ $kode_customer }}" required readonly>
         </div>
         <div class="mb-3">
             <label for="nama" class="form-label">Nama Customer</label>

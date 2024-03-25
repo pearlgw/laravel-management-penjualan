@@ -24,9 +24,20 @@ class JenisbarangController extends Controller
      */
     public function create()
     {
+        $cek = JenisBarang::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_jenis_barang = 'JNBRG' . $urut;
+        }else{
+            $ambil = JenisBarang::all()->last();
+            $urut = (int)substr($ambil->kode_jenis_barang, - 5) + 1;
+            $kode_jenis_barang = 'JNBRG' . $urut;
+        }
+
         return view('jenis_barang.create', [
             'title' => 'Form Jenis Barang',
             'user' => auth()->user()->name,
+            'kode_jenis_barang' => $kode_jenis_barang,
         ]);
     }
 

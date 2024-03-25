@@ -4,17 +4,12 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">Form Barang ke Toko</h1>
     </div>
-    <form action="/detail-stok-toko" method="POST" style="width: 50%">
+    <form action="/detail-stok-toko" method="POST" style="width: 80%">
         @csrf
         <div class="mb-3">
             <label for="kode_suratjalan" class="form-label">Kode Surat Jalan</label>
-            <input type="text" name="kode_suratjalan" class="form-control @error('kode_suratjalan') is-invalid @enderror" id="kode_suratjalan"
-                value="{{ old('kode_suratjalan') }}" required>
-            @error('kode_suratjalan')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
+            <input type="text" name="kode_suratjalan" class="form-control" id="kode_suratjalan"
+                value="{{ $kode_suratjalan }}" required readonly>
         </div>
         <div class="mb-3">
             <label for="toko_id" class="form-label">Toko Tujuan</label>

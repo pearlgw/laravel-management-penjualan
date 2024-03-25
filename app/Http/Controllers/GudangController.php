@@ -24,9 +24,20 @@ class GudangController extends Controller
      */
     public function create()
     {
+        $cek = Gudang::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_gudang = 'GDNG' . $urut;
+        }else{
+            $ambil = Gudang::all()->last();
+            $urut = (int)substr($ambil->kode_gudang, - 5) + 1;
+            $kode_gudang = 'GDNG' . $urut;
+        }
+
         return view('gudang.create', [
             'title' => 'Form Gudang',
             'user' => auth()->user()->name,
+            'kode_gudang' => $kode_gudang
         ]);
     }
 

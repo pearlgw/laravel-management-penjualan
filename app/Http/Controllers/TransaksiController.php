@@ -28,11 +28,22 @@ class TransaksiController extends Controller
         // Ambil total stok toko yang sesuai dengan ID toko pengguna
         $totalStokToko = TotalStokToko::where('toko_id', $tokoId)->get();
 
+        $cek = Transaksi::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_transaksi = 'TRNS' . $urut;
+        }else{
+            $ambil = Transaksi::all()->last();
+            $urut = (int)substr($ambil->kode_transaksi, - 5) + 1;
+            $kode_transaksi = 'TRNS' . $urut;
+        }
+
         return view('transaksi.create', [
             'title' => 'Form Transaksi',
             'user' => auth()->user()->name,
             'totalstoktoko' => $totalStokToko,
             'customer' => Customer::all(),
+            'kode_transaksi' => $kode_transaksi
         ]);
     }
 

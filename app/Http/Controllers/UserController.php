@@ -25,10 +25,20 @@ class UserController extends Controller
      */
     public function create()
     {
+        $cek = User::count();
+        if($cek == 0){
+            $urut = 1001;
+            $kode_user = 'USR' . $urut;
+        }else{
+            $ambil = User::all()->last();
+            $urut = (int)substr($ambil->kode_user, - 4) + 1;
+            $kode_user = 'USR' . $urut;
+        }
         return view('user.create', [
             'title' => 'Form User',
             'user' => auth()->user()->name,
-            'role' => Role::all()
+            'role' => Role::all(),
+            'kode_user' => $kode_user,
         ]);
     }
 

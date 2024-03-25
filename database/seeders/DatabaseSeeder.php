@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'kode_user' => 'USR001',
+            'kode_user' => 'USR1001',
             'name' => 'admin',
             'alamat' => 'yogya',
             'no_telepon' => '089728282929',
@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'kode_user' => 'USR002',
+            'kode_user' => 'USR1002',
             'name' => 'admingudang',
             'alamat' => 'bantul',
             'no_telepon' => '089728282929',
@@ -65,7 +65,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'kode_user' => 'USR003',
+            'kode_user' => 'USR1003',
             'name' => 'adminkasir',
             'alamat' => 'sleman',
             'no_telepon' => '089728282929',
@@ -76,7 +76,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'kode_user' => 'USR004',
+            'kode_user' => 'USR1004',
             'name' => 'adminkasir1',
             'alamat' => 'jakarta',
             'no_telepon' => '089728282929',

@@ -22,10 +22,20 @@ class CustomerController extends Controller
      */
     public function create()
     {
+        $cek = Customer::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_customer = 'CSTM' . $urut;
+        }else{
+            $ambil = Customer::all()->last();
+            $urut = (int)substr($ambil->kode_customer, - 5) + 1;
+            $kode_customer = 'CSTM' . $urut;
+        }
         return view('customer.create', [
             'title' => 'Form Customer',
             'user' => auth()->user()->name,
-            'role' => Role::all()
+            'role' => Role::all(),
+            'kode_customer' => $kode_customer
         ]);
     }
 

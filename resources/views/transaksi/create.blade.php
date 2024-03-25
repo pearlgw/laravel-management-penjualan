@@ -11,13 +11,8 @@
                 <div class="mb-3">
                     <label for="kode_transaksi" class="form-label">Kode Transaksi</label>
                     <input type="text" name="kode_transaksi"
-                        class="form-control @error('kode_transaksi') is-invalid @enderror" id="kode_transaksi"
-                        value="{{ old('kode_transaksi') }}" required>
-                    @error('kode_transaksi')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
+                        class="form-control" id="kode_transaksi"
+                        value="{{ $kode_transaksi }}" required readonly>
                 </div>
                 <div class="mb-3">
                     <label for="name" class="form-label">Nama Pelayan</label>

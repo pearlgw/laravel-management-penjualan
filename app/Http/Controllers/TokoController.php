@@ -24,9 +24,20 @@ class TokoController extends Controller
      */
     public function create()
     {
+        $cek = Toko::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_toko = 'TK' . $urut;
+        }else{
+            $ambil = Toko::all()->last();
+            $urut = (int)substr($ambil->kode_toko, - 5) + 1;
+            $kode_toko = 'TK' . $urut;
+        }
+
         return view('toko.create', [
             'title' => 'Form Toko',
             'user' => auth()->user()->name,
+            'kode_toko' => $kode_toko
         ]);
     }
 

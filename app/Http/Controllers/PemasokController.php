@@ -24,9 +24,20 @@ class PemasokController extends Controller
      */
     public function create()
     {
+        $cek = Pemasok::count();
+        if($cek == 0){
+            $urut = 10001;
+            $kode_pemasok = 'PMSK' . $urut;
+        }else{
+            $ambil = Pemasok::all()->last();
+            $urut = (int)substr($ambil->kode_pemasok, - 5) + 1;
+            $kode_pemasok = 'PMSK' . $urut;
+        }
+
         return view('pemasok.create', [
             'title' => 'Form Pemasok',
             'user' => auth()->user()->name,
+            'kode_pemasok' => $kode_pemasok
         ]);
     }
 
