@@ -18,6 +18,8 @@
                         <tr>
                             <th>No</th>
                             <th>Nama Peran</th>
+                            <th>Waktu Buat</th>
+                            <th>Waktu Update</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -26,6 +28,12 @@
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->role_name }}</td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
                                 <td style="vertical-align: middle;">
                                     <a href="/role/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
                                             class="fas fa-edit"></i></a>

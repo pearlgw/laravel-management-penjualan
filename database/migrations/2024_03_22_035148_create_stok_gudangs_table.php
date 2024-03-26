@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('stok_gudangs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('gudang_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             $table->foreign('gudang_id')->references('id')->on('gudangs');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

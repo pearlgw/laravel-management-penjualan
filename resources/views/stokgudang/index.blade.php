@@ -18,19 +18,34 @@
                         <tr>
                             <th>No</th>
                             <th>Gudang</th>
+                            <th>Nama Pegawai</th>
                             <th>Barang</th>
                             <th>Stok</th>
-                            <th>Aksi</th>
+                            <th>Waktu</th>
+                            {{-- <th>Aksi</th> --}}
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($detail_stok_gudang as $data)
+                        @foreach ($stok_gudang as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->stokGudang->gudang->nama }}</td>
-                                <td>{{ $data->barang->nama }}</td>
-                                <td>{{ $data->stok }}</td>
-                                <td></td>
+                                <td>{{ $data->gudang->nama }}</td>
+                                <td>{{ $data->user->name }}</td>
+                                <td>
+                                    @foreach ($data->detailstokgudang as $detail)
+                                        {{ $detail->barang->nama }}<br>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    @foreach ($data->detailstokgudang as $detail)
+                                        {{ $detail->stok }}<br>
+                                    @endforeach
+                                </td>
+                                <td>
+                                    <p>{{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                    </p>
+                                </td>
+                                {{-- <td></td> --}}
                             </tr>
                         @endforeach
                     </tbody>

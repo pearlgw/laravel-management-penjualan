@@ -18,29 +18,37 @@
                         <tr>
                             <th>No</th>
                             <th>Kode Surat Jalan</th>
-                            <th>Toko</th>
+                            <th>Nama Pegawai</th>
+                            <th>Toko Tujuan</th>
                             <th>Barang</th>
                             <th>Stok</th>
+                            <th>Waktu</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($detailstoktoko as $data)
+                        @foreach ($stoktoko as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->kode_suratjalan }}</td>
+                                <td>{{ $data->user->name }}</td>
                                 <td>{{ $data->toko->nama }}</td>
                                 <td>
                                     @foreach ($data->detailStokToko as $detail)
-                                        <p>{{ $detail->barang->barang->nama }}</p>
+                                        {{ $detail->barang->barang->nama }}<br>
                                     @endforeach
                                 </td>
                                 <td>
                                     @foreach ($data->detailStokToko as $detail)
-                                        <p>{{ $detail->stok }}</p>
+                                        {{ $detail->stok }}<br>
                                     @endforeach
                                 </td>
-                                <td></td>
+                                <td>
+                                    <p>{{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}</p>
+                                </td>
+                                <td>
+                                    <a href="/surat-jalan/{{ $data->id }}" target="_blank" class="btn btn-primary">Cetak</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

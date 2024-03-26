@@ -20,6 +20,8 @@
                             <th>Kode Toko</th>
                             <th>Nama Toko</th>
                             <th>Alamat</th>
+                            <th>Waktu Buat</th>
+                            <th>Waktu Update</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -30,6 +32,12 @@
                                 <td>{{ $data->kode_toko }}</td>
                                 <td>{{ $data->nama }}</td>
                                 <td>{{ $data->alamat }}</td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
                                 <td style="vertical-align: middle;">
                                     <a href="/toko/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
                                             class="fas fa-edit"></i></a>

@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('stok_tokos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('kode_suratjalan')->unique();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('toko_id');
             $table->timestamps();
 
             $table->foreign('toko_id')->references('id')->on('tokos');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

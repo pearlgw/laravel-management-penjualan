@@ -18,6 +18,7 @@
                             <th>No</th>
                             <th>Barang</th>
                             <th>Total Stok</th>
+                            <th>Waktu</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,6 +27,9 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->totalStokGudang->barang->nama }}</td>
                                 <td>{{ $data->total_stok }}</td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

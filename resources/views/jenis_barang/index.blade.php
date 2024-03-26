@@ -19,6 +19,8 @@
                             <th>No</th>
                             <th>Kode Jenis Barang</th>
                             <th>Kategori Barang</th>
+                            <th>Waktu Buat</th>
+                            <th>Waktu Update</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -28,6 +30,12 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->kode_jenis_barang }}</td>
                                 <td>{{ $data->kategori_barang }}</td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
                                 <td style="vertical-align: middle;">
                                     <a href="/jenis_barang/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
                                             class="fas fa-edit"></i></a>

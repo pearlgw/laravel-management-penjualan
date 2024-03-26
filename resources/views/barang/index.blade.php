@@ -23,6 +23,8 @@
                             <th>Pemasok</th>
                             <th>Harga Beli</th>
                             <th>Harga Jual</th>
+                            <th>Waktu Buat</th>
+                            <th>Waktu Update</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -36,6 +38,12 @@
                                 <td>{{ $data->RRpemasok->nama }}</td>
                                 <td>Rp {{ number_format($data->harga_beli, 2, ',', '.') }}</td>
                                 <td>Rp {{ number_format($data->harga_jual, 2, ',', '.') }}</td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
                                 <td style="vertical-align: middle;">
                                     <a href="/barang/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
                                             class="fas fa-edit"></i></a>

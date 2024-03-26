@@ -16,7 +16,7 @@ class DetailstokgudangController extends Controller
         return view('stokgudang.index', [
             'title' => 'Stok Gudang',
             'user' => auth()->user()->name,
-            'detail_stok_gudang' => DetailStokGudang::all(),
+            'stok_gudang' => StokGudang::all(),
         ]);
     }
 
@@ -34,13 +34,15 @@ class DetailstokgudangController extends Controller
     {
         $request->validate([
             'gudang_id' => 'required|exists:gudangs,id',
+            'user_id' => 'required',
             'barang_id.*' => 'required|exists:barangs,id',
             'stok.*' => 'required|numeric|min:0'
         ]);
 
         // Simpan data ke tabel StokGudang
         $stokGudang = StokGudang::create([
-            'gudang_id' => $request->gudang_id
+            'gudang_id' => $request->gudang_id,
+            'user_id' => $request->user_id
         ]);
 
         foreach ($request->barang_id as $key => $barang_id) {

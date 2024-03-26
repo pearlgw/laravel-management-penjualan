@@ -19,4 +19,9 @@ class StokToko extends Model
     {
         return $this->hasMany(DetailStokToko::class, 'stoktoko_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

@@ -16,7 +16,7 @@ class DetailstoktokoController extends Controller
         return view('stoktoko.index', [
             'title' => 'Total Stok Gudang',
             'user' => auth()->user()->name,
-            'detailstoktoko' => StokToko::with('detailStokToko')->get(),
+            'stoktoko' => StokToko::with('detailStokToko')->get(),
         ]);
     }
 
@@ -53,7 +53,8 @@ class DetailstoktokoController extends Controller
         // Simpan data ke tabel StokToko
         $stokToko = StokToko::create([
             'kode_suratjalan' => $request->kode_suratjalan,
-            'toko_id' => $request->toko_id
+            'toko_id' => $request->toko_id,
+            'user_id' => $request->user_id,
         ]);
 
         foreach ($request->barang_id as $key => $barang_id) {

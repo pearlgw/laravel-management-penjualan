@@ -25,6 +25,8 @@
                             <th>Barang</th>
                             <th>Jumlah Pembelian</th>
                             <th>Total</th>
+                            <th>Waktu</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -51,6 +53,12 @@
                                     @foreach ($data->detailtransaksi as $detail)
                                         <p>{{ $detail->total }}</p>
                                     @endforeach
+                                </td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
+                                <td>
+                                    <a href="/transaksi-print/{{ $data->id }}" class="btn btn-primary" target="_blank">Cetak</a>
                                 </td>
                             </tr>
                         @endforeach

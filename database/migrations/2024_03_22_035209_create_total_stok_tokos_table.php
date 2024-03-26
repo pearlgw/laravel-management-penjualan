@@ -15,7 +15,6 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('barang_id');
             $table->unsignedBigInteger('toko_id');
-            // $table->unsignedBigInteger('gudang_id_asal');
             $table->integer('total_stok')->default(0);
             $table->timestamps();
 

@@ -12,6 +12,11 @@
                 value="{{ $kode_suratjalan }}" required readonly>
         </div>
         <div class="mb-3">
+            <label for="user_id" class="form-label">Nama Pegawai</label>
+            <input type="text" name="user_id_view" id="user_id" class="form-control" value="{{ $user }}" readonly>
+            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+        </div>
+        <div class="mb-3">
             <label for="toko_id" class="form-label">Toko Tujuan</label>
             <select class="form-control" id="toko_id" name="toko_id" required>
                 @foreach ($toko as $data)

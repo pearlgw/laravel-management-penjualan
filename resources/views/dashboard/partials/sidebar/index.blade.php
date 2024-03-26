@@ -116,20 +116,16 @@
             </div>
 
             <li class="nav-item active">
-                <a class="nav-link text-dark" href="/histori-transaksi">
+                <a class="nav-link text-dark" href="/customer">
                     <i class="fas fa-users text-dark"></i>
-                    <span>Histori Transaksi</span>
+                    <span>Customer</span>
                 </a>
             </li>
 
-            <div class="sidebar-heading">
-                Mutasi
-            </div>
-
             <li class="nav-item active">
-                <a class="nav-link text-dark" href="/role">
+                <a class="nav-link text-dark" href="/transaksi">
                     <i class="fas fa-users text-dark"></i>
-                    <span>Mutasi</span>
+                    <span>Histori Transaksi</span>
                 </a>
             </li>
 
@@ -184,17 +180,6 @@
                 </a>
             </li>
 
-            <div class="sidebar-heading">
-                Mutasi
-            </div>
-
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="/role">
-                    <i class="fas fa-users text-dark"></i>
-                    <span>Mutasi</span>
-                </a>
-            </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -204,7 +189,7 @@
             </div>
         @elseif (auth()->user()->role_id === 3)
             <div class="sidebar-heading">
-                transaction
+                Interface
             </div>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/customer">

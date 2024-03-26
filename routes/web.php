@@ -12,6 +12,8 @@ use App\Http\Controllers\HistoriTransaksi;
 use App\Http\Controllers\JenisbarangController;
 use App\Http\Controllers\KetersediaanbarangController;
 use App\Http\Controllers\PemasokController;
+use App\Http\Controllers\PrintsuratjalanController;
+use App\Http\Controllers\PrinttransaksiController;
 use App\Http\Controllers\RedirectController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SuperadminController;
@@ -58,8 +60,17 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
     Route::resource('/jenis_barang', JenisbarangController::class);
     Route::resource('/user', UserController::class);
     Route::resource('/role', RoleController::class);
+});
 
-    Route::get('/histori-transaksi', [HistoriTransaksi::class, 'index']);
+// untuk admin gudang
+Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
+    Route::get('/admingudang', [AdmingudangController::class, 'index']);
+});
+
+// untuk admin kasir
+Route::group(['middleware' => ['auth', 'checkrole:3']], function() {
+    Route::get('/adminkasir', [AdminkasirController::class, 'index']);
+    Route::get('/ketersediaan-barang', [KetersediaanbarangController::class, 'index']);
 });
 
 Route::group(['middleware' => ['auth', 'checkrole:1,2']], function() {
@@ -72,18 +83,12 @@ Route::group(['middleware' => ['auth', 'checkrole:1,2']], function() {
     Route::resource('/detail-stok-toko', DetailstoktokoController::class);
     Route::get('/total-stok-toko', [TotalstoktokoController::class, 'index']);
     Route::get('/total-stok-toko/{id}', [TotalstoktokoController::class, 'databarang']);
+
+    Route::get('/surat-jalan/{id}', [PrintsuratjalanController::class, 'print']);
 });
 
-// untuk admin gudang
-Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
-    Route::get('/admingudang', [AdmingudangController::class, 'index']);
-});
-
-// untuk admin kasir
-Route::group(['middleware' => ['auth', 'checkrole:3']], function() {
-    Route::get('/adminkasir', [AdminkasirController::class, 'index']);
-    Route::resource('/transaksi', TransaksiController::class);
-    Route::get('/ketersediaan-barang', [KetersediaanbarangController::class, 'index']);
+Route::group(['middleware' => ['auth', 'checkrole:1,3']], function() {
     Route::resource('/customer', CustomerController::class);
-
+    Route::resource('/transaksi', TransaksiController::class);
+    Route::get('/transaksi-print/{id}', [PrinttransaksiController::class, 'print']);
 });

@@ -8,7 +8,7 @@
             </div>
         @endif
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
-            <h3 class="m-0 font-weight-bold text-primary">Data Total Barang di Gudang</h3>
+            <h3 class="m-0 font-weight-bold text-primary">Data Total Barang di {{ $totalstokgudang[0]->gudang->nama }}</h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -18,7 +18,8 @@
                             <th>No</th>
                             <th>Barang</th>
                             <th>Total Stok</th>
-                            <th>Aksi</th>
+                            <th>Waktu</th>
+                            {{-- <th>Aksi</th> --}}
                         </tr>
                     </thead>
                     <tbody>
@@ -27,7 +28,10 @@
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->barang->nama }}</td>
                                 <td>{{ $data->total_stok }}</td>
-                                <td></td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
+                                {{-- <td></td> --}}
                             </tr>
                         @endforeach
                     </tbody>

@@ -19,4 +19,9 @@ class StokGudang extends Model
     {
         return $this->belongsTo(Gudang::class, 'gudang_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

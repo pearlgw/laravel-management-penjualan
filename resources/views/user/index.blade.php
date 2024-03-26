@@ -23,6 +23,8 @@
                             <th>No Telepon</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Waktu Buat</th>
+                            <th>Waktu Update</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -36,6 +38,12 @@
                                 <td>{{ $data->no_telepon }}</td>
                                 <td>{{ $data->email }}</td>
                                 <td>{{ $data->role->role_name }}</td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
+                                <td>
+                                    {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
+                                </td>
                                 <td style="vertical-align: middle;">
                                     <a href="/user/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
                                             class="fas fa-edit"></i></a>

@@ -14,6 +14,11 @@
                 @endforeach
             </select>
         </div>
+        <div class="mb-3">
+            <label for="user_id" class="form-label">Nama Pegawai</label>
+            <input type="text" name="user_id_view" id="user_id" class="form-control" value="{{ $user }}" readonly>
+            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+        </div>
         <table class="table" id="barang-table">
             <tr>
                 <td>Barang</td>
