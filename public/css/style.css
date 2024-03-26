@@ -31,3 +31,49 @@
 #alert .close:hover {
     opacity: 1;
 }
+
+
+/* Login style */
+
+.login {
+    /* background-image: url("../assets/bg.jpg") */
+    background-image: url(../assets/bg.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+.form-login{
+    background-color: rgba(127, 255, 212, 0.411);
+    border:  2px solid black;
+    box-shadow: 5px 10px 10px black;
+}
+
+/* Navrbar */
+
+.logout-button {
+    background-color: #E74A3B;
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+}
+.logout-button:hover{
+    background-color: darkred;
+}
+
+
+/* sidebar */
+.nav-item.active:hover {
+    background-color: #1CC88A;
+    border-radius: 15px;
+}
+
+.nav-item.active:hover .nav-link.span {
+    color: white;
+}
+
+
+.active-link {
+    background-color: #1CC88A;
+    border-radius: 15px;
+    color: white;
+}

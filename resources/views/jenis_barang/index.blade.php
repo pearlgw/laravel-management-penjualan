@@ -9,7 +9,7 @@
         @endif
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h3 class="m-0 font-weight-bold text-primary">Data Jenis Barang</h3>
-            <a href="/jenis_barang/create" class="btn btn-primary d-block">Tambah Jenis Barang</a>
+            <a href="/jenis_barang/create" class="btn btn-success d-block">Tambah Jenis Barang</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -29,13 +29,13 @@
                                 <td>{{ $data->kode_jenis_barang }}</td>
                                 <td>{{ $data->kategori_barang }}</td>
                                 <td style="vertical-align: middle;">
-                                    <a href="/jenis_barang/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
-                                            class="fas fa-edit"></i></a>
+                                    <a href="/jenis_barang/{{ $data->id }}/edit" class="btn btn-warning text-dark">Edit
+                                        <i class="fas fa-edit"></i></a>
                                     <form action="/jenis_barang/{{ $data->id }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="badge bg-danger border-0"
-                                            onclick="return confirm('Yakin hapus data jenis barang ini?')">
+                                        <button type="submit" class="btn btn-danger border-0"
+                                            onclick="return confirm('Yakin hapus data jenis barang ini?')">Delete
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </form>

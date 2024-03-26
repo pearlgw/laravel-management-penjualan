@@ -102,78 +102,86 @@ class DatabaseSeeder extends Seeder
             'kategori_barang' => 'Lemari',
         ]);
 
-        // Seeding Pemasok
-        Pemasok::create([
-            'kode_pemasok' => 'PMSK10001',
-            'nama' => 'Supri',
-            'alamat' => 'Jepara',
-            'no_telp' => '0812345678910',
-        ]);
+        // // Seeding Pemasok
+        // Pemasok::create([
+        //     'kode_pemasok' => 'PMSK10001',
+        //     'nama' => 'Supri',
+        //     'alamat' => 'Jepara',
+        //     'no_telp' => '0812345678910',
+        // ]);
 
-        Pemasok::create([
-            'kode_pemasok' => 'PMSK10002',
-            'nama' => 'Seno',
-            'alamat' => 'Semarang',
-            'no_telp' => '081206789240',
-        ]);
+        // Pemasok::create([
+        //     'kode_pemasok' => 'PMSK10002',
+        //     'nama' => 'Seno',
+        //     'alamat' => 'Semarang',
+        //     'no_telp' => '081206789240',
+        // ]);
 
-        // Seeding Gudang
-        Gudang::create([
-            'kode_gudang' => 'GDNG10001',
-            'nama' => 'Gudang A',
-            'alamat' => 'Semarang',
-        ]);
+        // // Seeding Gudang
+        // Gudang::create([
+        //     'kode_gudang' => 'GDNG10001',
+        //     'nama' => 'Gudang A',
+        //     'alamat' => 'Semarang',
+        // ]);
 
-        Gudang::create([
-            'kode_gudang' => 'GDNG10002',
-            'nama' => 'Gudang B',
-            'alamat' => 'Weleri',
-        ]);
+        // Gudang::create([
+        //     'kode_gudang' => 'GDNG10002',
+        //     'nama' => 'Gudang B',
+        //     'alamat' => 'Weleri',
+        // ]);
 
-        Gudang::create([
-            'kode_gudang' => 'GDNG10003',
-            'nama' => 'Gudang C',
-            'alamat' => 'Ambarawa',
-        ]);
+        // Gudang::create([
+        //     'kode_gudang' => 'GDNG10003',
+        //     'nama' => 'Gudang C',
+        //     'alamat' => 'Ambarawa',
+        // ]);
 
-        // Seeding Toko
-        Toko::create([
-            'kode_toko' => 'TK10001',
-            'nama' => 'Jati Atos',
-            'alamat' => 'Weleri',
-        ]);
-        Toko::create([
-            'kode_toko' => 'TK10002',
-            'nama' => 'Maju Mapan',
-            'alamat' => 'Tembalang',
-        ]);
+        // // Seeding Toko
+        // Toko::create([
+        //     'kode_toko' => 'TK10001',
+        //     'nama' => 'Jati Atos',
+        //     'alamat' => 'Weleri',
+        // ]);
+        // Toko::create([
+        //     'kode_toko' => 'TK10002',
+        //     'nama' => 'Maju Mapan',
+        //     'alamat' => 'Tembalang',
+        // ]);
 
         // seeding barang
-        Barang::create([
-            'kode_barang' => 'BRG10001',
-            'nama' => 'Meja Lipat',
-            'id_jenis_barang' => 1,
-            'id_pemasok' => 1,
-            'harga_beli' => 120000,
-            'harga_jual' => 150000
-        ]);
+        // Barang::create([
+        //     'kode_barang' => 'BRG10001',
+        //     'nama' => 'Meja Lipat',
+        //     'id_jenis_barang' => 1,
+        //     'id_pemasok' => 1,
+        //     'harga_beli' => 120000,
+        //     'harga_jual' => 150000
+        // ]);
 
-        Barang::create([
-            'kode_barang' => 'BRG10002',
-            'nama' => 'Kursi Lipat',
-            'id_jenis_barang' => 2,
-            'id_pemasok' => 2,
-            'harga_beli' => 50000,
-            'harga_jual' => 100000
-        ]);
+        // Barang::create([
+        //     'kode_barang' => 'BRG10002',
+        //     'nama' => 'Kursi Lipat',
+        //     'id_jenis_barang' => 2,
+        //     'id_pemasok' => 2,
+        //     'harga_beli' => 50000,
+        //     'harga_jual' => 100000
+        // ]);
 
-        Barang::create([
-            'kode_barang' => 'BRG10003',
-            'nama' => 'Lemari Lipat',
-            'id_jenis_barang' => 3,
-            'id_pemasok' => 2,
-            'harga_beli' => 500000,
-            'harga_jual' => 650000
+        // Barang::create([
+        //     'kode_barang' => 'BRG10003',
+        //     'nama' => 'Lemari Lipat',
+        //     'id_jenis_barang' => 3,
+        //     'id_pemasok' => 2,
+        //     'harga_beli' => 500000,
+        //     'harga_jual' => 650000
+        // ]);
+
+
+        $this->call([
+            TokoSeeder::class,
+            PemasokSeeder::class,
+            GudangSeeder::class,
+            BarangSeeder::class,
         ]);
     }
 }

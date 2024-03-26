@@ -35,21 +35,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 //  jika user belum login
-Route::group(['middleware' => 'guest'], function() {
+Route::group(['middleware' => 'guest'], function () {
     Route::get('/', [AuthController::class, 'login'])->name('login');
     Route::post('/', [AuthController::class, 'dologin']);
-
 });
 
 // untuk superadmin dan pegawai
-Route::group(['middleware' => ['auth', 'checkrole:1,2,3']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:1,2,3']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/redirect', [RedirectController::class, 'cek']);
 });
 
 
 // untuk superadmin
-Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:1']], function () {
     Route::get('/superadmin', [SuperadminController::class, 'index']);
 
     Route::resource('/gudang', GudangController::class);
@@ -62,7 +61,7 @@ Route::group(['middleware' => ['auth', 'checkrole:1']], function() {
     Route::get('/histori-transaksi', [HistoriTransaksi::class, 'index']);
 });
 
-Route::group(['middleware' => ['auth', 'checkrole:1,2']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:1,2']], function () {
     Route::resource('/barang', BarangController::class);
 
     Route::resource('/detail-stok-gudang', DetailstokgudangController::class);
@@ -75,15 +74,14 @@ Route::group(['middleware' => ['auth', 'checkrole:1,2']], function() {
 });
 
 // untuk admin gudang
-Route::group(['middleware' => ['auth', 'checkrole:2']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:2']], function () {
     Route::get('/admingudang', [AdmingudangController::class, 'index']);
 });
 
 // untuk admin kasir
-Route::group(['middleware' => ['auth', 'checkrole:3']], function() {
+Route::group(['middleware' => ['auth', 'checkrole:3']], function () {
     Route::get('/adminkasir', [AdminkasirController::class, 'index']);
     Route::resource('/transaksi', TransaksiController::class);
     Route::get('/ketersediaan-barang', [KetersediaanbarangController::class, 'index']);
     Route::resource('/customer', CustomerController::class);
-
 });
