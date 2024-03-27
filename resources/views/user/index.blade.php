@@ -45,7 +45,7 @@
                                     {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
                                 </td>
                                 <td style="vertical-align: middle;">
-                                    <a href="/user/{{ $data->id }}/edit" class="btn btn-warning text-dark">Edit <i
+                                    <a href="/user/{{ $data->id }}/edit" class="btn btn-warning text-dark mb-2">Edit <i
                                             class="fas fa-edit"></i></a>
                                     <form action="/user/{{ $data->id }}" method="POST" class="d-inline">
                                         @csrf

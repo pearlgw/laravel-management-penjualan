@@ -36,17 +36,33 @@
                                 <td>
                                     {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
                                 </td>
+
+
                                 <td style="vertical-align: middle;">
-                                    <a href="/jenis_barang/{{ $data->id }}/edit" class="btn btn-warning text-dark">Edit
-                                        <i class="fas fa-edit"></i></a>
-                                    <form action="/jenis_barang/{{ $data->id }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger border-0"
-                                            onclick="return confirm('Yakin hapus data jenis barang ini?')">Delete
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                    <div style="display: flex; align-items: center;">
+                                        <a href="/jenis_barang/{{ $data->id }}/edit"
+                                            class="btn btn-warning text-dark mb-1" style="flex: 1;">
+                                            <div style="display: flex; align-items: center;">
+                                                Edit
+                                                <i class="fas fa-edit ml-1"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <form action="/jenis_barang/{{ $data->id }}" method="POST" class="d-inline"
+                                            style="flex: 1;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger border-0"
+                                                onclick="return confirm('Yakin hapus data pemasok ini?')"
+                                                style="width: 100%;">
+                                                <div style="display: flex; align-items: center; justify-content: center;">
+                                                    Delete
+                                                    <i class="fas fa-trash-alt ml-1"></i>
+                                                </div>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
                             </tr>
                         @endforeach

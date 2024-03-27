@@ -118,16 +118,16 @@
                 transaction
             </div>
 
-            <li class="nav-item active">
+            {{-- <li class="nav-item active">
                 <a class="nav-link text-dark" href="/histori-transaksi">
                     <i class="bi bi-cash-stack"></i>
                     <span>Histori Transaksi</span>
                 </a>
-            </li>
+            </li> --}}
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/transaksi">
-                    <i class="fas fa-users text-dark"></i>
+                    <i class="bi bi-cash-stack text-dark"></i>
                     <span>Histori Transaksi</span>
                 </a>
             </li>
