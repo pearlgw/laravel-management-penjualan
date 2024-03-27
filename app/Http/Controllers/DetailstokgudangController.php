@@ -32,6 +32,7 @@ class DetailstokgudangController extends Controller
 
     public function store(Request $request)
     {
+
         $request->validate([
             'gudang_id' => 'required|exists:gudangs,id',
             'user_id' => 'required',
@@ -66,5 +67,4 @@ class DetailstokgudangController extends Controller
 
         return redirect('/detail-stok-gudang')->with('success', 'Berhasil menyimpan data stok gudang');
     }
-
 }

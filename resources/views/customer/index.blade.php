@@ -33,12 +33,12 @@
                                 <td>{{ $data->no_telepon }}</td>
                                 <td>{{ $data->role->role_name }}</td>
                                 <td style="vertical-align: middle;">
-                                    <a href="/customer/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
+                                    <a href="/customer/{{ $data->id }}/edit" class="btn btn-warning text-dark"><i
                                             class="fas fa-edit"></i></a>
                                     <form action="/customer/{{ $data->id }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="badge bg-danger border-0"
+                                        <button type="submit" class="btn btn-danger border-0"
                                             onclick="return confirm('Yakin hapus data customer ini?')">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>

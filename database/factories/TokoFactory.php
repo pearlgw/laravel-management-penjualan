@@ -23,7 +23,7 @@ class TokoFactory extends Factory
 
         return [
             'kode_toko' => $kodeToko,
-            'nama' => $this->faker->name(),
+            'nama' => $this->faker->firstName(),
             'alamat' => $this->faker->address(),
         ];
     }

@@ -25,7 +25,7 @@ class PemasokFactory extends Factory
             'kode_pemasok' => $kodePemasok,
             'nama' => $this->faker->name(),
             'alamat' => $this->faker->address(),
-            'no_telp' => mt_rand(6218, 92826),
+            'no_telp' => '+62' . $this->faker->numberBetween(100000000, 999999999)
         ];
     }
 }

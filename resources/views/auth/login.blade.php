@@ -2,12 +2,6 @@
 
 @section('contents')
     <div class="row login mx-0 my-0 justify-content-center">
-        <div class="col-md-4 align-items-center d-flex">
-            <div class="">
-                <h2>Selamat Datang Sayang</h2>
-                <h4>Jangan Lupa Makan Ya</h4>
-            </div>
-        </div>
         <div class="col-md-5">
             <div class="d-flex  align-items-center vh-100">
                 <div class="card form-login" style="width: 40rem;">
