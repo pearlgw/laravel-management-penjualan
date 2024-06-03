@@ -38,12 +38,12 @@
                                 <td>{{ $data->RRpemasok->nama }}</td>
                                 <td>Rp {{ number_format($data->harga_beli, 2, ',', '.') }}</td>
                                 <td>Rp {{ number_format($data->harga_jual, 2, ',', '.') }}</td>
-                                {{-- <td>
+                                <td>
                                     {{ \Carbon\Carbon::parse($data->created_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
                                 </td>
                                 <td>
                                     {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
-                                </td> --}}
+                                </td>
                                 <td style="vertical-align: middle;">
                                     <div style="display: flex; align-items: center;">
                                         <a href="/barang/{{ $data->id }}/edit" class="btn btn-warning text-dark mb-1"
