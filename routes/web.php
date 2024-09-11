@@ -82,7 +82,10 @@ Route::group(['middleware' => ['auth', 'checkrole:1,2']], function () {
     Route::resource('/detail-stok-toko', DetailstoktokoController::class);
     Route::get('/total-stok-toko', [TotalstoktokoController::class, 'index']);
     Route::get('/total-stok-toko/{id}', [TotalstoktokoController::class, 'databarang']);
+
+    Route::get('/surat-jalan/{id}', [PrintsuratjalanController::class, 'print']);
 });
+
 
 // untuk admin gudang
 Route::group(['middleware' => ['auth', 'checkrole:2']], function () {

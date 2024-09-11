@@ -125,7 +125,12 @@
                 </a>
             </li>
 
-
+            {{-- <li class="nav-item active">
+                <a class="nav-link text-dark" href="/transaksi">
+                    <i class="fas fa-users text-dark"></i>
+                    <span>Histori Transaksi</span>
+                </a>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -178,11 +183,8 @@
                 </a>
             </li>
 
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 8818270e6d6a658140d6c14db9f7b1b9dacfdd37
             <!-- Divider -->
             <hr class="sidebar-divider">
 
