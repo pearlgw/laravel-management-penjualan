@@ -3,15 +3,18 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         <div class="sidebar-brand-icon">
-            {{-- <i class="fas fa-laugh-wink"></i> --}}
-            {{-- <img class="ulogo" src="{{ asset('img/evoku_u.png') }}" alt="Udinus" width="30%" >
+
             <style>
-                .ulogo:hover{width:32%;}
-                .ulogo{transition: 0.1s;}
-            </style> --}}
-            {{-- <div class="sidebar-brand-text mx-3">E-Voku</div> --}}
+                .ulogo:hover {
+                    width: 32%;
+                }
+
+                .ulogo {
+                    transition: 0.1s;
+                }
+            </style>
+            <div class="sidebar-brand-text mx-3">Dashboard</div>
         </div>
-        {{-- <div class="sidebar-brand-text mx-3">E-Voku <sup>Dinus</sup></div> --}}
     </a>
 
     <!-- Divider -->
@@ -24,16 +27,17 @@
                 Interface
             </div>
 
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="/superadmin">
-                    <i class="fas fa-user text-dark"></i>
+            <li class="nav-item active ">
+                <a class="nav-link text-dark " href="/superadmin">
+
+                    <i class="bi bi-house-fill text-dark"></i>
                     <span>Home</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/role">
-                    <i class="fas fa-users text-dark"></i>
+                    <i class="bi bi-person-fill-gear text-dark"></i>
                     <span>Role</span>
                 </a>
             </li>
@@ -47,35 +51,35 @@
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/jenis_barang">
-                    <i class="fas fa-users text-dark"></i>
+                    <i class="bi bi-boxes text-dark"></i>
                     <span>Jenis Barang</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/pemasok">
-                    <i class="fas fa-users text-dark"></i>
+                    <i class="bi bi-person-workspace text-dark"></i>
                     <span>Pemasok</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/toko">
-                    <i class="fas fa-users text-dark"></i>
+                    <i class="bi bi-shop-window text-dark"></i>
                     <span>Toko</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/gudang">
-                    <i class="fas fa-users text-dark"></i>
+                    <i class="bi bi-houses-fill text-dark"></i>
                     <span>Gudang</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/barang">
-                    <i class="fas fa-users text-dark"></i>
+                    <i class="bi bi-box-seam text-dark"></i>
                     <span>Barang</span>
                 </a>
             </li>
@@ -85,28 +89,27 @@
             </div>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/detail-stok-gudang">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Barang -> Gudang</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/total-stok-gudang">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Total Barang yang ada di gudang</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/detail-stok-toko">
-                    <i class="fas fa-users text-dark"></i>
                     <span>Barang Gudang -> Toko</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/total-stok-toko">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Total Barang yang ada di toko</span>
                 </a>
             </li>
@@ -116,18 +119,13 @@
             </div>
 
             <li class="nav-item active">
-                <a class="nav-link text-dark" href="/customer">
-                    <i class="fas fa-users text-dark"></i>
-                    <span>Customer</span>
-                </a>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="/transaksi">
-                    <i class="fas fa-users text-dark"></i>
+                <a class="nav-link text-dark" href="/histori-transaksi">
+                    <i class="bi bi-cash-stack"></i>
                     <span>Histori Transaksi</span>
                 </a>
             </li>
+
+
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -143,7 +141,7 @@
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/barang">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Barang</span>
                 </a>
             </li>
@@ -154,32 +152,37 @@
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/detail-stok-gudang">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Barang -> Gudang</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/total-stok-gudang">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Total Barang yang ada di gudang</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/detail-stok-toko">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Barang Gudang -> Toko</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/total-stok-toko">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Total Barang yang ada di toko</span>
                 </a>
             </li>
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 8818270e6d6a658140d6c14db9f7b1b9dacfdd37
             <!-- Divider -->
             <hr class="sidebar-divider">
 
@@ -193,13 +196,13 @@
             </div>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/customer">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Customer</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/ketersediaan-barang">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Ketersediaan Barang</span>
                 </a>
             </li>
@@ -210,14 +213,14 @@
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/transaksi/create">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Transaksi</span>
                 </a>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/transaksi">
-                    <i class="fas fa-users text-dark"></i>
+
                     <span>Histori Transaksi</span>
                 </a>
             </li>
@@ -232,3 +235,20 @@
         @endif
     @endauth
 </ul>
+
+<script>
+    // Ambil URL halaman saat ini
+    const currentURL = window.location.href;
+
+    // Ambil semua link di sidebar
+    const sidebarLinks = document.querySelectorAll('.nav-link');
+
+    // Periksa setiap link di sidebar
+    sidebarLinks.forEach(link => {
+        // Jika URL dari link sama dengan URL halaman saat ini
+        if (link.href === currentURL) {
+            // Tambahkan kelas 'active-link' ke link
+            link.classList.add('active-link');
+        }
+    });
+</script>

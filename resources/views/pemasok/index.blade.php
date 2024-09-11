@@ -9,11 +9,11 @@
         @endif
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h3 class="m-0 font-weight-bold text-primary">Data Pemasok</h3>
-            <a href="/pemasok/create" class="btn btn-primary d-block">Tambah Pemasok</a>
+            <a href="/pemasok/create" class="btn btn-success d-block">Tambah Pemasok</a>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="dataTable" cellspacing="0">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -41,17 +41,32 @@
                                     {{ \Carbon\Carbon::parse($data->updated_at)->isoFormat('dddd, D MMMM YYYY, HH:mm:ss') }}
                                 </td>
                                 <td style="vertical-align: middle;">
-                                    <a href="/pemasok/{{ $data->id }}/edit" class="badge bg-warning text-dark"><i
-                                            class="fas fa-edit"></i></a>
-                                    <form action="/pemasok/{{ $data->id }}" method="POST" class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="badge bg-danger border-0"
-                                            onclick="return confirm('Yakin hapus data pemasok ini?')">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </button>
-                                    </form>
+                                    <div style="display: flex; align-items: center;">
+                                        <a href="/pemasok/{{ $data->id }}/edit" class="btn btn-warning text-dark mb-1"
+                                            style="flex: 1;">
+                                            <div style="display: flex; align-items: center;">
+                                                Edit
+                                                <i class="fas fa-edit ml-1"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div style="display: flex; align-items: center;">
+                                        <form action="/pemasok/{{ $data->id }}" method="POST" class="d-inline"
+                                            style="flex: 1;">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger border-0"
+                                                onclick="return confirm('Yakin hapus data pemasok ini?')"
+                                                style="width: 100%;">
+                                                <div style="display: flex; align-items: center; justify-content: center;">
+                                                    Delete
+                                                    <i class="fas fa-trash-alt ml-1"></i>
+                                                </div>
+                                            </button>
+                                        </form>
+                                    </div>
                                 </td>
+
                             </tr>
                         @endforeach
                     </tbody>

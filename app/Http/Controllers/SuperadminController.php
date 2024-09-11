@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class SuperadminController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('superadmin.index', [
             'title' => "Home",
             'user' => auth()->user()->name,
